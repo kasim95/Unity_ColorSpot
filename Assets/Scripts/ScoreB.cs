@@ -18,8 +18,8 @@ public class ScoreB : MonoBehaviour
         score = 0;
         multivalue = 1;
         multicount = 0;
-        scoreText.text = "Score: \n" + score;
-        multiplierText.text = "Multiplier \n" + multicount;
+        scoreText.text = score.ToString();
+        multiplierText.text = multicount.ToString() + "x";
     }
 
     void OnTriggerEnter2D()
@@ -29,16 +29,16 @@ public class ScoreB : MonoBehaviour
             multivalue = 2;
             multicount = 10;
             score += ballValue * multivalue;
-            scoreText.text = "Score: \n" + score;
-            multiplierText.text = "Multiplier \n" + multicount;
+            scoreText.text = score.ToString();
+            multiplierText.text = multicount.ToString() + "x";
         }
         else
         {
 
             multicount += 1;
             score += ballValue * multivalue;
-            scoreText.text = "Score: \n" + score;
-            multiplierText.text = "Multiplier \n" + multicount;
+            scoreText.text = score.ToString();
+            multiplierText.text = multicount.ToString() + "x";
 
         }
     }
@@ -47,7 +47,7 @@ public class ScoreB : MonoBehaviour
     public void ResetMultiplier()
     {
         multicount = 0;
-        multiplierText.text = "Multiplier \n" + multicount;
+        multiplierText.text = multicount.ToString() + "x";
 
     }
 

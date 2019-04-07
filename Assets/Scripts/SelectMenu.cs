@@ -23,17 +23,22 @@ public class SelectMenu : MonoBehaviour
     public Text Lv3HighScore;
     public GameObject Homebutton;
     public Text Wallet;
+    public Image img_color_wheel;
+    public Sprite colorwheel1;
+    public Sprite colorwheel2;
+    public Sprite colorwheel3;
     //grab data from lv1,lv2,lv3 for highscore
 
     void Start()
     {
-        Level1.SetActive(true);
+    	Level1.SetActive(true);
         Level2.SetActive(false);
         Level3.SetActive(false);
         LV1_rt.SetActive(true);
         LV2_lft.SetActive(false);
         LV2_rt.SetActive(false);
         LV3_lft.SetActive(false);
+        img_color_wheel.sprite = colorwheel1;
         SetWallet();
         updatescores();
     }
@@ -47,6 +52,7 @@ public class SelectMenu : MonoBehaviour
         LV2_lft.SetActive(true);
         LV2_rt.SetActive(true);
         LV3_lft.SetActive(false);
+        img_color_wheel.sprite = colorwheel2;        
     }
 
     public void secondleft()
@@ -58,7 +64,7 @@ public class SelectMenu : MonoBehaviour
         LV2_lft.SetActive(false);
         LV2_rt.SetActive(false);
         LV3_lft.SetActive(false);
-
+        img_color_wheel.sprite = colorwheel1;
     }
 
     public void secondright()
@@ -70,6 +76,7 @@ public class SelectMenu : MonoBehaviour
         LV2_lft.SetActive(false);
         LV2_rt.SetActive(false);
         LV3_lft.SetActive(true);
+        img_color_wheel.sprite = colorwheel3;
     }
 
     public void thirdleft()
@@ -81,6 +88,7 @@ public class SelectMenu : MonoBehaviour
         LV2_lft.SetActive(true);
         LV2_rt.SetActive(true);
         LV3_lft.SetActive(false);
+        img_color_wheel.sprite = colorwheel2;
     }
     public void takemetoLV1()
     {

@@ -94,21 +94,9 @@ public class shop_script : MonoBehaviour
     public void navigate_toHome()
     {
     	//UPDATE: change to Home screen later
-    	SceneManager.LoadScene("Load User");
+    	SceneManager.LoadScene("Level_Select");
     }
-/*
-    void change_defaultsprite()	
-    {
-    	}
 
-    void change_defaultnote()
-    {
-    	}
-
-    void change_defaultbg()
-    {
-    	}
-*/
     void purchase_objectupdate(int no1, int no2)
     {
     	if (no1 == 1)

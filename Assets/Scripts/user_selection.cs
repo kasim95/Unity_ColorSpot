@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Runtime.Serialization.Formatters.Binary; 
 using System.IO;
 
@@ -308,6 +309,7 @@ public class user_selection : MonoBehaviour
 		selectedbg = user1.selectedbg;
 		Save_PlayerPrefs(1);
 		//add code to deactivate the panel
+		//change this later to navigate to Home
 	}
 
 	void load_uname1()
@@ -318,6 +320,7 @@ public class user_selection : MonoBehaviour
 			Save_PlayerPrefs(1);
 			//add code to deactivate this panel
 			//panel_user_selection.SetActive(false);
+			SceneManager.LoadScene("Shop");
 		}
 		else
 		{
@@ -364,7 +367,7 @@ public class user_selection : MonoBehaviour
 		selectedbg = user2.selectedbg;
 		Save_PlayerPrefs(2);
 		//add code to deactivate the panel
-	
+		//change this later to navigate to Home
 	}
 
 	void load_uname2()
@@ -375,6 +378,7 @@ public class user_selection : MonoBehaviour
 			Save_PlayerPrefs(2);
 			//add code to deactivate this panel
 			//panel_user_selection.SetActive(false);
+			SceneManager.LoadScene("Shop");
 		}
 		else
 		{
@@ -408,6 +412,7 @@ public class user_selection : MonoBehaviour
 		selectedbg = user3.selectedbg;
 		Save_PlayerPrefs(3);
 		//add code to deactivate the panel
+		//change this later to navigate to Home
 	}
 
 
@@ -420,6 +425,7 @@ public class user_selection : MonoBehaviour
 			Save_PlayerPrefs(3);
 			//add code to deactivate this panel
 			//panel_user_selection.SetActive(false);
+			SceneManager.LoadScene("Shop");
 		}
 		else
 		{
@@ -449,8 +455,7 @@ public class user_selection : MonoBehaviour
 			Save_Binary(user2,2, folderPath);
 			txt_username2.text = "<None>";
 			bt_delusername2.gameObject.SetActive(false);
-		}
-	
+		}	
 	}
 
 	void del_uname3()
@@ -524,8 +529,6 @@ public class user_selection : MonoBehaviour
 			txt_username3.text = user2.uname;
 			bt_delusername3.gameObject.SetActive(true);
 		}
-		
-
     }
 
     void Awake()

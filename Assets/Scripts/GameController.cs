@@ -45,7 +45,7 @@ public class GameController : MonoBehaviour
         { StartCoroutine(SpawnA()); }
         else if(nodechoice == 2)
         { StartCoroutine(SpawnB()); }
-        timerText.text = "Time Left:\n" + Mathf.RoundToInt(timeLeft);
+        timerText.text = Mathf.RoundToInt(timeLeft).ToString();
 
 
     }
@@ -56,7 +56,7 @@ public class GameController : MonoBehaviour
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0)
         { timeLeft = 0; }
-        timerText.text = "Time Left:\n" + Mathf.RoundToInt(timeLeft);
+        timerText.text = Mathf.RoundToInt(timeLeft).ToString();
     }
 
     IEnumerator SpawnA()
