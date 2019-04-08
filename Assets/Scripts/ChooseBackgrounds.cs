@@ -14,6 +14,8 @@ public class ChooseBackgrounds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bkchoice = PlayerPrefs.GetInt("current_selected_bg");
+
         if (bkchoice == 0)
         { background1.gameObject.SetActive(true);
             background2.gameObject.SetActive(false);

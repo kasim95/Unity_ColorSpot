@@ -12,6 +12,8 @@ public class AvatarChoice : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        avchoice = PlayerPrefs.GetInt("current_selected_sprite");
+
         if (avchoice == 0)
         {
             av1.gameObject.SetActive(true);

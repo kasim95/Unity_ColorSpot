@@ -28,7 +28,9 @@ public class GameController : MonoBehaviour
     void Start()
 
     {
-        highscore1 = PlayerPrefs.GetInt("lvl1highscore");
+        highscore1 = PlayerPrefs.GetInt("current_lvl1highscore");
+        nodechoice = PlayerPrefs.GetInt("current_selected_note");
+
         gameoverpanel.SetActive(false);
         myAV = FindObjectOfType<AvatarChoice>();
         int value = myAV.avchoice;
@@ -105,39 +107,39 @@ public class GameController : MonoBehaviour
         if (myAV.avchoice == 0 || myAV.avchoice == 1)
         { myscore.text = "Score: " + myA.score;
           mycoins.text = "Coins: " + Mathf.RoundToInt(myA.score/2);
-            wallet = PlayerPrefs.GetInt("wallet");
+            wallet = PlayerPrefs.GetInt("current_coincount");
             wallet += Mathf.RoundToInt(myA.score / 2);
-             PlayerPrefs.SetInt("wallet", wallet);
+             PlayerPrefs.SetInt("current_coincount", wallet);
             if (myA.score >= highscore1)
             { highscore1 = myA.score;
                 //myhighscore1.text = "High Score: " + highscore1;
-                PlayerPrefs.SetInt("lvl1highscore", highscore1);
+                PlayerPrefs.SetInt("current_lvl1highscore", highscore1);
             }
         }
         else if (myAV.avchoice == 2)
         { myscore.text = "Score: " + myB.score;
           mycoins.text = "Coins: " + Mathf.RoundToInt(myB.score / 2);
-            wallet = PlayerPrefs.GetInt("wallet");
+            wallet = PlayerPrefs.GetInt("current_coincount");
             wallet += Mathf.RoundToInt(myB.score / 2);
-            PlayerPrefs.SetInt("wallet", wallet);
+            PlayerPrefs.SetInt("current_coincount", wallet);
             if (myB.score >= highscore1)
             {
                 highscore1 = myB.score;
                // myhighscore1.text = "High Score: " + highscore1;
-               PlayerPrefs.SetInt("lvl1highscore", highscore1);
+               PlayerPrefs.SetInt("current_lvl1highscore", highscore1);
             }
         }
         else if (myAV.avchoice == 3)
         { myscore.text = "Score: " + myC.score;
             mycoins.text = "Coins: " + Mathf.RoundToInt(myC.score / 2);
-            wallet = PlayerPrefs.GetInt("wallet");
+            wallet = PlayerPrefs.GetInt("current_coincount");
             wallet += Mathf.RoundToInt(myC.score / 2);
-            PlayerPrefs.SetInt("wallet", wallet);
+            PlayerPrefs.SetInt("current_coincount", wallet);
             if (myC.score >= highscore1)
             {
                 highscore1 = myC.score;
                 //myhighscore1.text = "High Score: " + highscore1;
-               PlayerPrefs.SetInt("lvl1highscore", highscore1);
+               PlayerPrefs.SetInt("current_lvl1highscore", highscore1);
             }
         }
 

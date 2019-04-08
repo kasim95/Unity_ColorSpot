@@ -112,21 +112,21 @@ public class SelectMenu : MonoBehaviour
 
     public void updatescores()
     {
-        int value = PlayerPrefs.GetInt("lvl1highscore");
+        int value = PlayerPrefs.GetInt("current_lvl1highscore");
         if (value != 0)
-            LV1HighScore.text = "High Score\n" + PlayerPrefs.GetInt("lvl1highscore");
+            LV1HighScore.text = "High Score\n" + PlayerPrefs.GetInt("current_lvl1highscore");
         else
             LV1HighScore.text = "High Score\n" + myhighscore1;
 
-        int value2 = PlayerPrefs.GetInt("lvl2highscore");
+        int value2 = PlayerPrefs.GetInt("current_lvl2highscore");
         if (value2 != 0)
-            LV2HighScore.text = "High Score\n" + PlayerPrefs.GetInt("lvl2highscore");
+            LV2HighScore.text = "High Score\n" + PlayerPrefs.GetInt("current_lvl2highscore");
         else
             LV2HighScore.text = "High Score\n" + myhighscore2;
 
-        int value3 = PlayerPrefs.GetInt("lvl3highscore");
+        int value3 = PlayerPrefs.GetInt("current_lvl3highscore");
         if (value3 != 0)
-            Lv3HighScore.text = "High Score\n" + PlayerPrefs.GetInt("lvl3highscore");
+            Lv3HighScore.text = "High Score\n" + PlayerPrefs.GetInt("current_lvl3highscore");
         else
             Lv3HighScore.text = "High Score\n" + myhighscore3;
     
@@ -135,9 +135,9 @@ public class SelectMenu : MonoBehaviour
 
     public void SetWallet()
     {
-        int val = PlayerPrefs.GetInt("wallet");
+        int val = PlayerPrefs.GetInt("current_coincount");
         if ( val != 0)
-            Wallet.text = "" + PlayerPrefs.GetInt("wallet");
+            Wallet.text = "" + PlayerPrefs.GetInt("current_coincount");
 
         else
           Wallet.text = "" + wallet;
