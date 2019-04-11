@@ -21,16 +21,18 @@ public class SelectMenu : MonoBehaviour
     public Text LV1HighScore;
     public Text LV2HighScore;
     public Text Lv3HighScore;
-    public GameObject Homebutton;
+    //public GameObject Homebutton;
     public Text Wallet;
     public Image img_color_wheel;
     public Sprite colorwheel1;
     public Sprite colorwheel2;
     public Sprite colorwheel3;
+    public Button bt_home;
     //grab data from lv1,lv2,lv3 for highscore
 
     void Start()
     {
+        bt_home.onClick.AddListener(takememain);
     	Level1.SetActive(true);
         Level2.SetActive(false);
         Level3.SetActive(false);
@@ -107,13 +109,14 @@ public class SelectMenu : MonoBehaviour
 
     public void takememain()
     {
+        SceneManager.LoadScene("Menu2");
         //scenemanager to main
     }
 
     public void updatescores()
     {
-        int value = PlayerPrefs.GetInt("current_lvl1highscore");
-        if (value != 0)
+        int value1 = PlayerPrefs.GetInt("current_lvl1highscore");
+        if (value1 != 0)
             LV1HighScore.text = "High Score\n" + PlayerPrefs.GetInt("current_lvl1highscore");
         else
             LV1HighScore.text = "High Score\n" + myhighscore1;

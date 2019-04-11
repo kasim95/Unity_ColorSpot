@@ -1568,16 +1568,6 @@ MonoBehaviour:
   if_username: {fileID: 138462656}
   bt_userinput: {fileID: 1985983114}
   isbtpressed: 0
-  folderPath: 
-  uname: 
-  userno: 0
-  lvl1highscore: 0
-  lvl2highscore: 0
-  lvl3highscore: 0
-  coincount: 0
-  selectedsprite: 0
-  selectednote: 0
-  selectedbg: 0
 --- !u!1 &1039328526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,12 +1690,12 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 2
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 260, y: 350}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1719,8 +1709,8 @@ Canvas:
   m_GameObject: {fileID: 1121211218}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1246981783}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1787,7 +1777,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -1797,8 +1787,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 750
-    height: 1000
+    width: 260
+    height: 350
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -2016,7 +2006,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480941926}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

@@ -94,7 +94,7 @@ public class shop_script : MonoBehaviour
     public void navigate_toHome()
     {
     	//UPDATE: change to Home screen later
-    	SceneManager.LoadScene("Level_Select");
+    	SceneManager.LoadScene("Menu2");
     }
 
     void purchase_objectupdate(int no1, int no2)
@@ -105,11 +105,15 @@ public class shop_script : MonoBehaviour
     	}
     	else if (no1 == 2)
     	{
-    		user.spritespurchased[no2] = true;
+    		user.notespurchased[no2] = true;
+    	}
+    	else if (no1 == 3)
+    	{
+    		user.bgpurchased[no2] = true;
     	}
     	else
     	{
-    		user.spritespurchased[no2] = true;
+    		
     	}
    		user_selection.Save_Binary(user, user_selection.userno, folderPath);
     	user_selection.Save_PlayerPrefs(user_selection.userno);
@@ -282,8 +286,8 @@ public class shop_script : MonoBehaviour
 		{
 			if (!user.spritespurchased[no2])
 			{
-				bt_purchase.gameObject.SetActive(true);
 				bt_select.gameObject.SetActive(false);
+				bt_purchase.gameObject.SetActive(true);
 			}
 			else
 			{
@@ -291,12 +295,26 @@ public class shop_script : MonoBehaviour
 				bt_select.gameObject.SetActive(true);	
 			}
 		}	
-		else if (no2 == 2)
+		else if (no1 == 2)
 		{
 			if (!user.notespurchased[no2])
 			{
-				bt_purchase.gameObject.SetActive(true);
 				bt_select.gameObject.SetActive(false);
+				bt_purchase.gameObject.SetActive(true);
+			}
+			else
+			{
+				bt_purchase.gameObject.SetActive(false);
+				bt_select.gameObject.SetActive(true);
+			}
+		}
+		else if (no1 == 3)
+		{
+
+			if (!user.bgpurchased[no2])
+			{
+				bt_select.gameObject.SetActive(false);
+				bt_purchase.gameObject.SetActive(true);
 			}
 			else
 			{
@@ -306,17 +324,8 @@ public class shop_script : MonoBehaviour
 		}
 		else
 		{
-
-			if (!user.bgpurchased[no2])
-			{
-				bt_purchase.gameObject.SetActive(true);
-				bt_select.gameObject.SetActive(false);
-			}
-			else
-			{
-				bt_purchase.gameObject.SetActive(false);
-				bt_select.gameObject.SetActive(true);
-			}
+			bt_purchase.gameObject.SetActive(false);
+			bt_select.gameObject.SetActive(false);
 		}
 
 
@@ -489,7 +498,7 @@ public class shop_script : MonoBehaviour
 		object_price = bg_prices[4];
 		txt_objectname.text = bg_names[4];
 		txt_objprice.text = bg_prices[4].ToString();
-		EnablePurchaseSelect(3, 3);
+		EnablePurchaseSelect(3, 4);
 	}
 
 	IEnumerator RemoveAfterSeconds(int seconds, GameObject obj)
@@ -526,35 +535,35 @@ void decidePricesNames()
 	sprites_names[1] = "Kirby";
 	sprites_prices[1] = 0;
 	sprites_names[2] = "Baab";
-	sprites_prices[2] = 200;
+	sprites_prices[2] = 50;
 	sprites_names[3] = "Confused Rat";
-	sprites_prices[3] = 500;
+	sprites_prices[3] = 50;
 	sprites_names[4] = "Git It";
-	sprites_prices[4] = 600;
+	sprites_prices[4] = 5000;
 	sprites_names[5] = "Angry Rabbit";
-	sprites_prices[5] = 800;
+	sprites_prices[5] = 5000;
 	sprites_names[6] = "Sad Girl";
-	sprites_prices[6] = 600;
+	sprites_prices[6] = 5000;
 	sprites_names[7] = "Sword Guy";
-	sprites_prices[7] = 1000;
+	sprites_prices[7] = 5000;
 
 	notes_names[1] = "Balls";
 	notes_prices[1] = 0;
 	notes_names[2] = "Gucci Gang Bags";
-	notes_prices[2] = 5000;
+	notes_prices[2] = 50;
 	notes_names[3] = "Ratballs";
-	notes_prices[3] = 500;
+	notes_prices[3] = 5000;
 	notes_names[4] = "Flames";
-	notes_prices[4] = 600;
+	notes_prices[4] = 5000;
 
 	bg_names[1] = "Be Mine Blue";
 	bg_prices[1] = 0;
 	bg_names[2] = "YeeHaw Yellow";
-	bg_prices[2] = 100;
+	bg_prices[2] = 50;
 	bg_names[3] = "Ree Red";
-	bg_prices[3] = 500;
+	bg_prices[3] = 50;
 	bg_names[4] = "Starry Sight";
-	bg_prices[4] = 2000;
+	bg_prices[4] = 50;
 }
 
 

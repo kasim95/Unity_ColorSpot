@@ -14,7 +14,6 @@ public class GameOver : MonoBehaviour
     private ScoreB myB;
     private ScoreC myC;
     private AvatarChoice myAV;
-
     private GameController GC;
 
     void Start()
@@ -37,7 +36,6 @@ public class GameOver : MonoBehaviour
     {
         
         GameOverPanel.SetActive(true);
-        
         if (myAV.avchoice == 0 || myAV.avchoice == 1)
         { Yourscore.text = "Score: " + myA.score; }
         else if (myAV.avchoice == 2)

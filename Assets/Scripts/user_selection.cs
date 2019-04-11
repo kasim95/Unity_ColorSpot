@@ -172,9 +172,9 @@ public class user_selection : MonoBehaviour
 			user_list[i].lvl2highscore = 0;
 			user_list[i].lvl3highscore = 0;
 			user_list[i].coincount = 1500;
-			user_list[i].selectedsprite = 0;
-			user_list[i].selectednote = 0;
-			user_list[i].selectedbg = 0;
+			user_list[i].selectedsprite = 1;
+			user_list[i].selectednote = 1;
+			user_list[i].selectedbg = 1;
 			user_list[i].spritespurchased[1] = true;	
 			user_list[i].notespurchased[1] = true;	
 			user_list[i].bgpurchased[1] = true;
@@ -250,6 +250,45 @@ public class user_selection : MonoBehaviour
 		}
 	}
 
+	void makecurrentuser(int no)
+	{
+		if (no ==1)
+		{
+			uname = user1.uname;
+			lvl1highscore = user1.lvl1highscore;
+			lvl2highscore = user1.lvl2highscore;
+			lvl3highscore = user1.lvl3highscore;
+			coincount = user1.coincount;
+			selectedsprite = user1.selectedsprite;
+			selectednote = user1.selectednote;
+			selectedbg = user1.selectedbg;
+		}
+		else if (no == 2)
+		{
+			uname = user2.uname;
+			lvl1highscore = user2.lvl1highscore;
+			lvl2highscore = user2.lvl2highscore;
+			lvl3highscore = user2.lvl3highscore;
+			coincount = user2.coincount;
+			selectedsprite = user2.selectedsprite;
+			selectednote = user2.selectednote;
+			selectedbg = user2.selectedbg;
+		}
+		else
+		{
+			uname = user3.uname;
+			lvl1highscore = user3.lvl1highscore;
+			lvl2highscore = user3.lvl2highscore;
+			lvl3highscore = user3.lvl3highscore;
+			coincount = user3.coincount;
+			selectedsprite = user3.selectedsprite;
+			selectednote = user3.selectednote;
+			selectedbg = user3.selectedbg;
+		}
+	}
+
+
+
 	void userinputgiven()
 	{
 		isbtpressed = true;
@@ -317,10 +356,11 @@ public class user_selection : MonoBehaviour
 		isbtpressed = false;
 		if (user1.userexists == true)
 		{
+			makecurrentuser(1);
 			Save_PlayerPrefs(1);
 			//add code to deactivate this panel
 			//panel_user_selection.SetActive(false);
-			SceneManager.LoadScene("Shop");
+			SceneManager.LoadScene("Menu2");
 		}
 		else
 		{
@@ -375,10 +415,11 @@ public class user_selection : MonoBehaviour
 		isbtpressed = false;
 		if (user2.userexists == true)
 		{
+			makecurrentuser(2);
 			Save_PlayerPrefs(2);
 			//add code to deactivate this panel
 			//panel_user_selection.SetActive(false);
-			SceneManager.LoadScene("Shop");
+			SceneManager.LoadScene("Menu2");
 		}
 		else
 		{
@@ -422,10 +463,11 @@ public class user_selection : MonoBehaviour
 		isbtpressed = false;
 		if (user3.userexists == true)
 		{
+			makecurrentuser(3);
 			Save_PlayerPrefs(3);
 			//add code to deactivate this panel
 			//panel_user_selection.SetActive(false);
-			SceneManager.LoadScene("Shop");
+			SceneManager.LoadScene("Menu2");
 		}
 		else
 		{
@@ -441,6 +483,31 @@ public class user_selection : MonoBehaviour
 		if (user1.userexists == true)
 		{
 			user1.userexists = false;
+			user1.uname = "username1";
+			user1.coincount = 1500;
+			user1.lvl1highscore = 0;
+			user1.lvl2highscore = 0;
+			user1.lvl3highscore = 0;
+			user1.coincount = 1500;
+			user1.selectedsprite = 0;
+			user1.selectednote = 0;
+			user1.selectedbg = 0;
+			user1.spritespurchased[1] = true;	
+			user1.notespurchased[1] = true;	
+			user1.bgpurchased[1] = true;
+			user1.userexists = false;	
+			for(int j = 2; j <= 7; ++j)
+			{
+				user1.spritespurchased[j] = false;	
+			}
+			for (int j = 2; j <= 4; ++j)
+			{
+				user1.notespurchased[j] = false;		
+			}
+			for (int j = 2; j <= 4; ++j)
+			{
+				user1.bgpurchased[j] = false;
+			}
 			Save_Binary(user1,1, folderPath);
 			txt_username1.text = "<None>";
 			bt_delusername1.gameObject.SetActive(false);
@@ -452,6 +519,32 @@ public class user_selection : MonoBehaviour
 		if (user2.userexists == true)
 		{
 			user2.userexists = false;
+			user2.uname = "username2";
+			user2.coincount = 1500;
+			user2.lvl1highscore = 0;
+			user2.lvl2highscore = 0;
+			user2.lvl3highscore = 0;
+			user2.coincount = 1500;
+			user2.selectedsprite = 0;
+			user2.selectednote = 0;
+			user2.selectedbg = 0;
+			user2.spritespurchased[1] = true;	
+			user2.notespurchased[1] = true;	
+			user2.bgpurchased[1] = true;
+			user2.userexists = false;	
+			for(int j = 2; j <= 7; ++j)
+			{
+				user2.spritespurchased[j] = false;	
+			}
+			for (int j = 2; j <= 4; ++j)
+			{
+				user2.notespurchased[j] = false;		
+			}
+			for (int j = 2; j <= 4; ++j)
+			{
+				user2.bgpurchased[j] = false;
+			}
+			
 			Save_Binary(user2,2, folderPath);
 			txt_username2.text = "<None>";
 			bt_delusername2.gameObject.SetActive(false);
@@ -463,6 +556,32 @@ public class user_selection : MonoBehaviour
 		if (user3.userexists == true)
 		{
 			user3.userexists = false;
+			user3.uname = "username3";
+			user3.coincount = 1500;
+			user3.lvl1highscore = 0;
+			user3.lvl2highscore = 0;
+			user3.lvl3highscore = 0;
+			user3.coincount = 1500;
+			user3.selectedsprite = 0;
+			user3.selectednote = 0;
+			user3.selectedbg = 0;
+			user3.spritespurchased[1] = true;	
+			user3.notespurchased[1] = true;	
+			user3.bgpurchased[1] = true;
+			user3.userexists = false;	
+			for(int j = 2; j <= 7; ++j)
+			{
+				user3.spritespurchased[j] = false;	
+			}
+			for (int j = 2; j <= 4; ++j)
+			{
+				user3.notespurchased[j] = false;		
+			}
+			for (int j = 2; j <= 4; ++j)
+			{
+				user3.bgpurchased[j] = false;
+			}
+			
 			Save_Binary(user3,3, folderPath);
 			txt_username3.text = "<None>";
 			bt_delusername3.gameObject.SetActive(false);

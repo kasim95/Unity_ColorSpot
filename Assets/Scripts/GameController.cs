@@ -1,7 +1,11 @@
-﻿using System.Collections;
+﻿using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Runtime.Serialization.Formatters.Binary; 
+
 
 public class GameController : MonoBehaviour
 {
@@ -12,8 +16,8 @@ public class GameController : MonoBehaviour
     public int nodechoice;
     public float timeLeft;
     public Text timerText;
-
-
+    public GameObject scorepanel;
+    public Button bt_home;
     public GameObject gameoverpanel;
     public Text myscore;
     public Text myhighscore1;
@@ -24,13 +28,15 @@ public class GameController : MonoBehaviour
     public int highscore1;
     public Text mycoins;
     public int wallet = 0;
+    public string folderPath;
+    public user_selection.User user;
 
-    void Start()
+	void Start()
 
     {
         highscore1 = PlayerPrefs.GetInt("current_lvl1highscore");
         nodechoice = PlayerPrefs.GetInt("current_selected_note");
-
+        bt_home.onClick.AddListener(navigate_toHome);
         gameoverpanel.SetActive(false);
         myAV = FindObjectOfType<AvatarChoice>();
         int value = myAV.avchoice;
@@ -41,8 +47,10 @@ public class GameController : MonoBehaviour
         else if (value == 3)
         { myC = FindObjectOfType<ScoreC>(); }
 
-
-        screenHalfSizeWorldUnits = new Vector2(Camera.main.aspect* Camera.main.orthographicSize, Camera.main.orthographicSize);
+        screenHalfSizeWorldUnits = new Vector2(Camera.main.aspect* Camera.main.orthographicSize, Camera.main.orthographicSize-1f);
+        
+        user_selection.Load_PlayerPrefs();
+        //nodechoice = user_selection.selectednote;
         if (nodechoice == 1)
         { StartCoroutine(SpawnA()); }
         else if(nodechoice == 2)
@@ -60,6 +68,12 @@ public class GameController : MonoBehaviour
         { timeLeft = 0; }
         timerText.text = Mathf.RoundToInt(timeLeft).ToString();
     }
+
+    void navigate_toHome()
+    {
+        SceneManager.LoadScene("Menu2");
+    }
+
 
     IEnumerator SpawnA()
     {
@@ -98,8 +112,8 @@ public class GameController : MonoBehaviour
 
     public void calcScores()
     {
-        
         gameoverpanel.SetActive(true);
+        scorepanel.SetActive(false);
         //public GameObject gameoverpanel;
         //public Text myscore;
         // public Text myhighscore1;
@@ -109,7 +123,7 @@ public class GameController : MonoBehaviour
           mycoins.text = "Coins: " + Mathf.RoundToInt(myA.score/2);
             wallet = PlayerPrefs.GetInt("current_coincount");
             wallet += Mathf.RoundToInt(myA.score / 2);
-             PlayerPrefs.SetInt("current_coincount", wallet);
+            PlayerPrefs.SetInt("current_coincount", wallet);
             if (myA.score >= highscore1)
             { highscore1 = myA.score;
                 //myhighscore1.text = "High Score: " + highscore1;
@@ -142,9 +156,16 @@ public class GameController : MonoBehaviour
                PlayerPrefs.SetInt("current_lvl1highscore", highscore1);
             }
         }
-
-        
-        
-}
+    //Load from Binary code
+    folderPath = Path.Combine(Application.persistentDataPath, user_selection.folderName);
+    int userno = PlayerPrefs.GetInt("current_userno");   
+    string dataPath = user_selection.GetPath(userno, folderPath);
+    user = user_selection.Load_Binary(dataPath);
+    user.coincount = PlayerPrefs.GetInt("current_coincount");
+    user.lvl1highscore = PlayerPrefs.GetInt("current_lvl1highscore");
+    user.lvl2highscore = PlayerPrefs.GetInt("current_lvl2highscore");
+    user.lvl3highscore = PlayerPrefs.GetInt("current_lvl3highscore");
+    user_selection.Save_Binary(user, userno, folderPath);
+    }
 
 }
