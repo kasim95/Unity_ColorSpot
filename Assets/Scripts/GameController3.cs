@@ -48,7 +48,7 @@ public class GameController3 : MonoBehaviour
         { myC = FindObjectOfType<ScoreC>(); }
 
 
-        screenHalfSizeWorldUnits = new Vector2(Camera.main.aspect * Camera.main.orthographicSize, Camera.main.orthographicSize);
+        screenHalfSizeWorldUnits = new Vector2(Camera.main.aspect * Camera.main.orthographicSize, Camera.main.orthographicSize-1f);
         
         user_selection.Load_PlayerPrefs();
         if (nodechoice == 1)
