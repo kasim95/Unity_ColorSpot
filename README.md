@@ -3,7 +3,7 @@
 **Project Members:**
 
 - Kasim       _panjrikasim@gmail.com_
-- Donghau     _fengdh@csu.fullerton.edu_
+- Donghao     _fengdh@csu.fullerton.edu_
 - Kenji       _kenjiaavila@gmail.com_
 - Marzia      _mrz.stanekzai@gmail.com_
 - Pamela      _pcamacho@csu.fullerton.edu_
