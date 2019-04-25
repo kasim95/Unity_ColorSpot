@@ -30,6 +30,17 @@ public class SelectMenu : MonoBehaviour
     public Button bt_home;
     //grab data from lv1,lv2,lv3 for highscore
 
+    public GameObject LV1star1;
+    public GameObject LV1star2;
+    public GameObject LV1star3;
+    public GameObject LV2star1;
+    public GameObject LV2star2;
+    public GameObject LV2star3;
+    public GameObject LV3star1;
+    public GameObject LV3star2;
+    public GameObject LV3star3;
+
+
     void Start()
     {
         bt_home.onClick.AddListener(takememain);
@@ -43,6 +54,7 @@ public class SelectMenu : MonoBehaviour
         img_color_wheel.sprite = colorwheel1;
         SetWallet();
         updatescores();
+        showLV1Stars();
     }
 
     public void firstright()
@@ -54,7 +66,8 @@ public class SelectMenu : MonoBehaviour
         LV2_lft.SetActive(true);
         LV2_rt.SetActive(true);
         LV3_lft.SetActive(false);
-        img_color_wheel.sprite = colorwheel2;        
+        img_color_wheel.sprite = colorwheel2;
+        showLV2stars();
     }
 
     public void secondleft()
@@ -79,6 +92,7 @@ public class SelectMenu : MonoBehaviour
         LV2_rt.SetActive(false);
         LV3_lft.SetActive(true);
         img_color_wheel.sprite = colorwheel3;
+        showLV3stars();
     }
 
     public void thirdleft()
@@ -145,5 +159,95 @@ public class SelectMenu : MonoBehaviour
         else
           Wallet.text = "" + wallet;
 
+    }
+
+    public void showLV1Stars()
+    {
+        int my1 = PlayerPrefs.GetInt("current_lvl1highscore");
+        if (my1 > 0 && my1 <= 20)
+        {
+            LV1star1.SetActive(true);
+            LV1star2.SetActive(false);
+            LV1star3.SetActive(false);
+        }
+        else if (my1 > 20 && my1 <= 50)
+        {
+            LV1star1.SetActive(false);
+            LV1star2.SetActive(true);
+            LV1star3.SetActive(false);
+        }
+        else if(my1 > 50)
+        {
+            LV1star1.SetActive(false);
+            LV1star2.SetActive(false);
+            LV1star3.SetActive(true);
+        }
+        else if (my1 ==0)
+        {
+            LV1star1.SetActive(false);
+            LV1star2.SetActive(false);
+            LV1star3.SetActive(false);
+        }
+
+    }
+    
+
+    public void showLV2stars()
+    {
+        int my2 = PlayerPrefs.GetInt("current_lvl2highscore");
+        if (my2 > 0 && my2 <= 20)
+        {
+            LV2star1.SetActive(true);
+            LV2star2.SetActive(false);
+            LV2star3.SetActive(false);
+        }
+        else if (my2 > 20 && my2 <= 50)
+        {
+            LV2star1.SetActive(false);
+            LV2star2.SetActive(true);
+            LV2star3.SetActive(false);
+        }
+        else if (my2 > 50)
+        {
+            LV2star1.SetActive(false);
+            LV2star2.SetActive(false);
+            LV2star3.SetActive(true);
+        }
+        else if(my2 == 0)
+        {
+            LV2star1.SetActive(false);
+            LV2star2.SetActive(false);
+            LV2star3.SetActive(false);
+        }
+
+    }
+
+    public void showLV3stars()
+    {
+        int my3 = PlayerPrefs.GetInt("current_lvl3highscore");
+        if (my3 > 0 && my3 <= 20)
+        {
+            LV3star1.SetActive(true);
+            LV3star2.SetActive(false);
+            LV3star3.SetActive(false);
+        }
+        else if (my3 > 20 && my3 <= 50)
+        {
+            LV3star1.SetActive(false);
+            LV3star2.SetActive(true);
+            LV3star3.SetActive(false);
+        }
+        else if (my3 > 50)
+        {
+            LV3star1.SetActive(false);
+            LV3star2.SetActive(false);
+            LV3star3.SetActive(true);
+        }
+        else if(my3 == 0)
+        {
+            LV3star1.SetActive(false);
+            LV3star2.SetActive(false);
+            LV3star3.SetActive(false);
+        }
     }
 }

@@ -34,7 +34,7 @@ public class ScoreB : MonoBehaviour
         }
         else
         {
-
+            multivalue = 1;
             multicount += 1;
             score += ballValue * multivalue;
             scoreText.text = score.ToString();

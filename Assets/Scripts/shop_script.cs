@@ -539,22 +539,22 @@ void decidePricesNames()
 	sprites_names[3] = "Confused Rat";
 	sprites_prices[3] = 50;
 	sprites_names[4] = "Git It";
-	sprites_prices[4] = 5000;
+	sprites_prices[4] = 50;
 	sprites_names[5] = "Angry Rabbit";
-	sprites_prices[5] = 5000;
+	sprites_prices[5] = 50;
 	sprites_names[6] = "Sad Girl";
-	sprites_prices[6] = 5000;
+	sprites_prices[6] = 50;
 	sprites_names[7] = "Sword Guy";
-	sprites_prices[7] = 5000;
+	sprites_prices[7] = 50;
 
 	notes_names[1] = "Balls";
 	notes_prices[1] = 0;
 	notes_names[2] = "Gucci Gang Bags";
 	notes_prices[2] = 50;
 	notes_names[3] = "Ratballs";
-	notes_prices[3] = 5000;
+	notes_prices[3] = 50;
 	notes_names[4] = "Flames";
-	notes_prices[4] = 5000;
+	notes_prices[4] = 50;
 
 	bg_names[1] = "Be Mine Blue";
 	bg_prices[1] = 0;

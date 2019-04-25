@@ -37,6 +37,7 @@ public class ScoreA : MonoBehaviour
         }
         else
         {
+
             multivalue = 1;
             multicount += multivalue;
             score += ballValue * multivalue;
