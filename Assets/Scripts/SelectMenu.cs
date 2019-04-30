@@ -40,6 +40,24 @@ public class SelectMenu : MonoBehaviour
     public GameObject LV3star2;
     public GameObject LV3star3;
 
+    public GameObject Red_button;
+    public GameObject Blue_button;
+    public GameObject Yellow_button;
+    public GameObject Orange_button;
+    public GameObject Green_button;
+    public GameObject Purple_button;
+    public GameObject Teal_button;
+    public GameObject Amber_button;
+    public GameObject Magenta_button;
+    public GameObject Red_sign;
+    public GameObject Blue_sign;
+    public GameObject Yellow_sign;
+    public GameObject Orange_sign;
+    public GameObject Green_sign;
+    public GameObject Purple_sign;
+    public GameObject Amber_sign;
+    public GameObject Magenta_sign;
+    public GameObject Teal_sign;
 
     void Start()
     {
@@ -55,7 +73,26 @@ public class SelectMenu : MonoBehaviour
         SetWallet();
         updatescores();
         showLV1Stars();
-    }
+        Red_button.SetActive(true);
+        Blue_button.SetActive(true);
+        Yellow_button.SetActive(true);
+        Orange_button.SetActive(false);
+        Green_button.SetActive(false);
+        Purple_button.SetActive(false);
+        Teal_button.SetActive(false);
+        Amber_button.SetActive(false);
+        Magenta_button.SetActive(false);
+        Red_sign.SetActive(false);
+        Blue_sign.SetActive(false);
+        Yellow_sign.SetActive(false);
+        Orange_sign.SetActive(false);
+        Green_sign.SetActive(false);
+        Purple_sign.SetActive(false);
+        Amber_sign.SetActive(false);
+        Magenta_sign.SetActive(false);
+        Teal_sign.SetActive(false);
+
+}
 
     public void firstright()
     {
@@ -68,6 +105,16 @@ public class SelectMenu : MonoBehaviour
         LV3_lft.SetActive(false);
         img_color_wheel.sprite = colorwheel2;
         showLV2stars();
+
+        Red_button.SetActive(false);
+        Blue_button.SetActive(false);
+        Yellow_button.SetActive(false);
+        Orange_button.SetActive(true);
+        Green_button.SetActive(true);
+        Purple_button.SetActive(true);
+        Teal_button.SetActive(false);
+        Amber_button.SetActive(false);
+        Magenta_button.SetActive(false);
     }
 
     public void secondleft()
@@ -80,6 +127,16 @@ public class SelectMenu : MonoBehaviour
         LV2_rt.SetActive(false);
         LV3_lft.SetActive(false);
         img_color_wheel.sprite = colorwheel1;
+
+        Red_button.SetActive(true);
+        Blue_button.SetActive(true);
+        Yellow_button.SetActive(true);
+        Orange_button.SetActive(false);
+        Green_button.SetActive(false);
+        Purple_button.SetActive(false);
+        Teal_button.SetActive(false);
+        Amber_button.SetActive(false);
+        Magenta_button.SetActive(false);
     }
 
     public void secondright()
@@ -93,6 +150,16 @@ public class SelectMenu : MonoBehaviour
         LV3_lft.SetActive(true);
         img_color_wheel.sprite = colorwheel3;
         showLV3stars();
+
+        Red_button.SetActive(false);
+        Blue_button.SetActive(false);
+        Yellow_button.SetActive(false);
+        Orange_button.SetActive(false);
+        Green_button.SetActive(false);
+        Purple_button.SetActive(false);
+        Teal_button.SetActive(true);
+        Amber_button.SetActive(true);
+        Magenta_button.SetActive(true);
     }
 
     public void thirdleft()
@@ -105,6 +172,16 @@ public class SelectMenu : MonoBehaviour
         LV2_rt.SetActive(true);
         LV3_lft.SetActive(false);
         img_color_wheel.sprite = colorwheel2;
+
+        Red_button.SetActive(false);
+        Blue_button.SetActive(false);
+        Yellow_button.SetActive(false);
+        Orange_button.SetActive(true);
+        Green_button.SetActive(true);
+        Purple_button.SetActive(true);
+        Teal_button.SetActive(false);
+        Amber_button.SetActive(false);
+        Magenta_button.SetActive(false);
     }
     public void takemetoLV1()
     {
@@ -125,6 +202,123 @@ public class SelectMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Menu2");
         //scenemanager to main
+    }
+
+    public void show_red()
+    {
+        Red_sign.SetActive(true);
+        Blue_sign.SetActive(false);
+        Yellow_sign.SetActive(false);
+        Orange_sign.SetActive(false);
+        Green_sign.SetActive(false);
+        Purple_sign.SetActive(false);
+        Amber_sign.SetActive(false);
+        Magenta_sign.SetActive(false);
+        Teal_sign.SetActive(false);
+    }
+
+    public void show_blue()
+    {
+        Red_sign.SetActive(false);
+        Blue_sign.SetActive(true);
+        Yellow_sign.SetActive(false);
+        Orange_sign.SetActive(false);
+        Green_sign.SetActive(false);
+        Purple_sign.SetActive(false);
+        Amber_sign.SetActive(false);
+        Magenta_sign.SetActive(false);
+        Teal_sign.SetActive(false);
+    }
+
+    public void show_yellow()
+    {
+        Red_sign.SetActive(false);
+        Blue_sign.SetActive(false);
+        Yellow_sign.SetActive(true);
+        Orange_sign.SetActive(false);
+        Green_sign.SetActive(false);
+        Purple_sign.SetActive(false);
+        Amber_sign.SetActive(false);
+        Magenta_sign.SetActive(false);
+        Teal_sign.SetActive(false);
+    }
+
+    public void show_orange()
+    {
+        Red_sign.SetActive(false);
+        Blue_sign.SetActive(false);
+        Yellow_sign.SetActive(false);
+        Orange_sign.SetActive(true);
+        Green_sign.SetActive(false);
+        Purple_sign.SetActive(false);
+        Amber_sign.SetActive(false);
+        Magenta_sign.SetActive(false);
+        Teal_sign.SetActive(false);
+    }
+
+    public void show_green()
+    {
+        Red_sign.SetActive(false);
+        Blue_sign.SetActive(false);
+        Yellow_sign.SetActive(false);
+        Orange_sign.SetActive(false);
+        Green_sign.SetActive(true);
+        Purple_sign.SetActive(false);
+        Amber_sign.SetActive(false);
+        Magenta_sign.SetActive(false);
+        Teal_sign.SetActive(false);
+    }
+
+    public void show_purple()
+    {
+        Red_sign.SetActive(false);
+        Blue_sign.SetActive(false);
+        Yellow_sign.SetActive(false);
+        Orange_sign.SetActive(false);
+        Green_sign.SetActive(false);
+        Purple_sign.SetActive(true);
+        Amber_sign.SetActive(false);
+        Magenta_sign.SetActive(false);
+        Teal_sign.SetActive(false);
+    }
+
+    public void show_amber()
+    {
+        Red_sign.SetActive(false);
+        Blue_sign.SetActive(false);
+        Yellow_sign.SetActive(false);
+        Orange_sign.SetActive(false);
+        Green_sign.SetActive(false);
+        Purple_sign.SetActive(false);
+        Amber_sign.SetActive(true);
+        Magenta_sign.SetActive(false);
+        Teal_sign.SetActive(false);
+    }
+
+    public void show_magenta()
+    {
+        Red_sign.SetActive(false);
+        Blue_sign.SetActive(false);
+        Yellow_sign.SetActive(false);
+        Orange_sign.SetActive(false);
+        Green_sign.SetActive(false);
+        Purple_sign.SetActive(false);
+        Amber_sign.SetActive(false);
+        Magenta_sign.SetActive(true);
+        Teal_sign.SetActive(false);
+    }
+
+    public void show_teal()
+    {
+        Red_sign.SetActive(false);
+        Blue_sign.SetActive(false);
+        Yellow_sign.SetActive(false);
+        Orange_sign.SetActive(false);
+        Green_sign.SetActive(false);
+        Purple_sign.SetActive(false);
+        Amber_sign.SetActive(false);
+        Magenta_sign.SetActive(false);
+        Teal_sign.SetActive(true);
     }
 
     public void updatescores()
