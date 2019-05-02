@@ -42,7 +42,11 @@ public class shop_script : MonoBehaviour
 	//used for keeping track of the object_type and the object_no
 	public int current_no1;
 	public int current_no2;
-
+	
+	public Image object_state;
+	public Image star_image;
+	public Sprite lock_image;
+	public Sprite unlock_image;
 
 	//Object_selection_panel images. Update these images in folder and map them at the end.
 	public Sprite sprite1;
@@ -117,6 +121,7 @@ public class shop_script : MonoBehaviour
     	}
    		user_selection.Save_Binary(user, user_selection.userno, folderPath);
     	user_selection.Save_PlayerPrefs(user_selection.userno);
+    	checkobjectSelected(no1, no2);
     }
 
    	public void purchase_object()
@@ -217,6 +222,7 @@ public class shop_script : MonoBehaviour
     	{
     		changeimg_sprite1();
     	}   
+	checkobjectSelected(1,current_sprite);
 	}
 
 
@@ -278,10 +284,90 @@ public class shop_script : MonoBehaviour
     	}
 	}
 
+	public void checkobjectSelected(int no1, int no2)
+	{
+		star_image.enabled = false;
+		object_state.enabled = false;
+		if (no1 == 1)
+		{
+			int current_sprite = PlayerPrefs.GetInt("current_selected_sprite");
+			if (user.spritespurchased[no2])
+			{
+				object_state.sprite = unlock_image;
+				if (current_sprite == no2)
+				{
+					star_image.enabled = true;
+					object_state.enabled = false;
+				}
+				else
+				{
+					star_image.enabled = false;
+					object_state.enabled = true;
+				}
+			}
+			else
+			{
+				star_image.enabled = false;
+				object_state.enabled = true;
+				object_state.sprite = lock_image;	
+			}
+		}
+		if (no1 == 2)
+		{
+			int current_note = PlayerPrefs.GetInt("current_selected_note");
+			if (user.notespurchased[no2])
+			{
+				object_state.sprite = unlock_image;
+				if (current_note== no2)
+				{
+					star_image.enabled = true;
+					object_state.enabled = false;	
+				}
+				else
+				{
+					star_image.enabled = false;
+					object_state.enabled = true;
+				}				
+			}
+			else
+			{
+				star_image.enabled = false;
+				object_state.enabled = true;
+				object_state.sprite = lock_image;
+			}
+		}
+		if (no1 == 3)
+		{
+			int current_bg = PlayerPrefs.GetInt("current_selected_bg");
+			if (user.bgpurchased[no2])
+			{
+				object_state.sprite = unlock_image;
+				if (current_bg== no2)
+				{
+					star_image.enabled = true;
+					object_state.enabled = false;	
+				}
+				else
+				{
+					star_image.enabled = false;
+					object_state.enabled = true;
+				}				
+			}
+			else
+			{
+				star_image.enabled = false;
+				object_state.enabled = true;
+				object_state.sprite = lock_image;
+			}	
+		}
+	}
+
 	public void EnablePurchaseSelect(int no1, int no2)
 	{
 		//Here, no1 is for sprites(0), notes(1), bg(2)
 		//Here, no2 is for the no of object;
+		checkobjectSelected(no1, no2);
+
 		if (no1 == 1)
 		{
 			if (!user.spritespurchased[no2])
@@ -526,6 +612,8 @@ public class shop_script : MonoBehaviour
 		}
 		user_selection.Save_PlayerPrefs(user_selection.userno);
 		user_selection.Save_Binary(user, user_selection.userno, folderPath);
+		checkobjectSelected(current_no1, current_no2);
+		
 	}
 
 
