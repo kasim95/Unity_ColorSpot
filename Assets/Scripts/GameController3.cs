@@ -106,7 +106,7 @@ public class GameController3 : MonoBehaviour
         while (timeLeft > 0)
         {
             GameObject ball = balls[Random.Range(0, 3)];
-            Vector3 spawnPosition = new Vector3(Random.Range(-7.5f, 5f), 10f, 0.0f);
+            Vector3 spawnPosition = new Vector3(Random.Range(-7.5f, 5f), 8f, 0.0f);
             Quaternion spawnRotation = Quaternion.identity;
             Instantiate(ball, spawnPosition, spawnRotation);
             yield return new WaitForSeconds(Random.Range(1.0f, 2.0f));
@@ -124,7 +124,7 @@ public class GameController3 : MonoBehaviour
         while (timeLeft > 0)
         {
             GameObject purse = purses[Random.Range(0, 3)];
-            Vector3 spawnPosition = new Vector3(Random.Range(-7.5f, 5f), 10f, 0.0f);
+            Vector3 spawnPosition = new Vector3(Random.Range(-7.5f, 5f), 8f, 0.0f);
             Quaternion spawnRotation = Quaternion.identity;
             Instantiate(purse, spawnPosition, spawnRotation);
             yield return new WaitForSeconds(Random.Range(1.0f, 2.0f));
@@ -141,7 +141,7 @@ public class GameController3 : MonoBehaviour
         while (timeLeft > 0)
         {
             GameObject ratball = ratballs[Random.Range(0, 3)];
-            Vector3 spawnPosition = new Vector3(Random.Range(-7.5f, 5f), 10f, 0.0f);
+            Vector3 spawnPosition = new Vector3(Random.Range(-7.5f, 5f), 8f, 0.0f);
             Quaternion spawnRotation = Quaternion.identity;
             Instantiate(ratball, spawnPosition, spawnRotation);
             yield return new WaitForSeconds(Random.Range(1.0f, 2.0f));
@@ -159,7 +159,7 @@ public class GameController3 : MonoBehaviour
         while (timeLeft > 0)
         {
             GameObject flame = flames[Random.Range(0, 3)];
-            Vector3 spawnPosition = new Vector3(Random.Range(-7.5f, 5f), 10f, 0.0f);
+            Vector3 spawnPosition = new Vector3(Random.Range(-7.5f, 5f), 8f, 0.0f);
             Quaternion spawnRotation = Quaternion.identity;
             Instantiate(flame, spawnPosition, spawnRotation);
             yield return new WaitForSeconds(Random.Range(1.0f, 2.0f));
