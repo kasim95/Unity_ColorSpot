@@ -583,7 +583,7 @@ PrefabInstance:
     - target: {fileID: 252323305195110540, guid: fa842776371d15f489bb6fafaa292a76,
         type: 3}
       propertyPath: ballValue
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 252323305195110540, guid: fa842776371d15f489bb6fafaa292a76,
         type: 3}
@@ -1056,7 +1056,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 21d6c8c8415e3a748a79c88436fb7228, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 80ca55a49183e2b4dac7568a84b3a065, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1389,7 +1389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 770448396}
-  ballValue: 2
+  ballValue: 10
   multiplierText: {fileID: 1625515424}
   multivalue: 0
   multicount: 0
@@ -2934,7 +2934,7 @@ PrefabInstance:
     - target: {fileID: 4228216908376870879, guid: 9c835f2e6c852a84b9fb5be83bf46912,
         type: 3}
       propertyPath: ballValue
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c835f2e6c852a84b9fb5be83bf46912, type: 3}
@@ -3110,7 +3110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 770448396}
-  ballValue: 2
+  ballValue: 10
   multiplierText: {fileID: 1625515424}
   multivalue: 0
   multicount: 0
@@ -3319,7 +3319,7 @@ PrefabInstance:
     - target: {fileID: 9085047565740320205, guid: 7800f8d02f8fe7348aec346ae7306313,
         type: 3}
       propertyPath: ballValue
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9085047565740320205, guid: 7800f8d02f8fe7348aec346ae7306313,
         type: 3}
@@ -3694,7 +3694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 770448396}
-  ballValue: 2
+  ballValue: 10
   multiplierText: {fileID: 1625515424}
   multivalue: 0
   multicount: 0
@@ -3864,7 +3864,7 @@ PrefabInstance:
     - target: {fileID: 16344256767985343, guid: 8995e98a2bbc4524f990430c10c9ed3e,
         type: 3}
       propertyPath: ballValue
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8995e98a2bbc4524f990430c10c9ed3e, type: 3}
