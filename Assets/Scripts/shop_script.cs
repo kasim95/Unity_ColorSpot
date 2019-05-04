@@ -93,6 +93,26 @@ public class shop_script : MonoBehaviour
 	public user_selection.User user;
 	public string folderPath;
 
+	public GameObject txt_selected;
+	public GameObject txt_hover_sprites;
+	public GameObject txt_hover_notes;
+	public GameObject txt_hover_bg;
+
+	public GameObject txt_hover_sprite1;
+	public GameObject txt_hover_sprite2;
+	public GameObject txt_hover_sprite3;
+	public GameObject txt_hover_sprite4;
+	public GameObject txt_hover_sprite5;
+	public GameObject txt_hover_sprite6;
+	public GameObject txt_hover_sprite7;
+	public GameObject txt_hover_note1;
+	public GameObject txt_hover_note2;
+	public GameObject txt_hover_note3;
+	public GameObject txt_hover_note4;
+	public GameObject txt_hover_bg1;
+	public GameObject txt_hover_bg2;
+	public GameObject txt_hover_bg3;
+	public GameObject txt_hover_bg4;
 
 	
     public void navigate_toHome()
@@ -342,7 +362,7 @@ public class shop_script : MonoBehaviour
 			if (user.bgpurchased[no2])
 			{
 				object_state.sprite = unlock_image;
-				if (current_bg== no2)
+				if (current_bg == no2)
 				{
 					star_image.enabled = true;
 					object_state.enabled = false;	
@@ -367,9 +387,10 @@ public class shop_script : MonoBehaviour
 		//Here, no1 is for sprites(0), notes(1), bg(2)
 		//Here, no2 is for the no of object;
 		checkobjectSelected(no1, no2);
-
+		txt_selected.SetActive(false);
 		if (no1 == 1)
 		{
+			int curr_sprite = PlayerPrefs.GetInt("current_selected_sprite");	
 			if (!user.spritespurchased[no2])
 			{
 				bt_select.gameObject.SetActive(false);
@@ -377,12 +398,23 @@ public class shop_script : MonoBehaviour
 			}
 			else
 			{
-				bt_purchase.gameObject.SetActive(false);
-				bt_select.gameObject.SetActive(true);	
+				if (curr_sprite == no2)
+				{
+					bt_purchase.gameObject.SetActive(false);
+					bt_select.gameObject.SetActive(false);
+					txt_selected.SetActive(true);
+				}
+				else
+				{
+					bt_purchase.gameObject.SetActive(false);
+					bt_select.gameObject.SetActive(true);
+				}
+					
 			}
 		}	
 		else if (no1 == 2)
 		{
+			int curr_note = PlayerPrefs.GetInt("current_selected_note");
 			if (!user.notespurchased[no2])
 			{
 				bt_select.gameObject.SetActive(false);
@@ -390,13 +422,22 @@ public class shop_script : MonoBehaviour
 			}
 			else
 			{
-				bt_purchase.gameObject.SetActive(false);
-				bt_select.gameObject.SetActive(true);
+				if (curr_note == no2)
+				{
+					bt_purchase.gameObject.SetActive(false);
+					bt_select.gameObject.SetActive(false);
+					txt_selected.SetActive(true);
+				}
+				else
+				{
+					bt_purchase.gameObject.SetActive(false);
+					bt_select.gameObject.SetActive(true);
+				}
 			}
 		}
 		else if (no1 == 3)
 		{
-
+			int curr_bg = PlayerPrefs.GetInt("current_selected_bg");
 			if (!user.bgpurchased[no2])
 			{
 				bt_select.gameObject.SetActive(false);
@@ -404,8 +445,18 @@ public class shop_script : MonoBehaviour
 			}
 			else
 			{
-				bt_purchase.gameObject.SetActive(false);
-				bt_select.gameObject.SetActive(true);
+				if (curr_bg == no2)
+				{
+					bt_purchase.gameObject.SetActive(false);
+					bt_select.gameObject.SetActive(false);
+					txt_selected.SetActive(true);
+				}
+				else
+				{
+					bt_purchase.gameObject.SetActive(false);
+					bt_select.gameObject.SetActive(true);	
+				}
+				
 			}
 		}
 		else
@@ -613,9 +664,193 @@ public class shop_script : MonoBehaviour
 		user_selection.Save_PlayerPrefs(user_selection.userno);
 		user_selection.Save_Binary(user, user_selection.userno, folderPath);
 		checkobjectSelected(current_no1, current_no2);
+		EnablePurchaseSelect(current_no1, current_no2);
 		
 	}
 
+public void onhover_sprite()
+{
+	txt_hover_sprites.SetActive(true);
+}
+
+public void offhover_sprite()
+{
+	txt_hover_sprites.SetActive(false);
+}
+
+public void onhover_notes()
+{
+	txt_hover_notes.SetActive(true);
+}
+
+public void offhover_notes()
+{
+	txt_hover_notes.SetActive(false);
+}
+
+public void onhover_bg()
+{
+	txt_hover_bg.SetActive(true);
+}
+
+public void offhover_bg()
+{
+	txt_hover_bg.SetActive(false);
+}
+
+public void onhover_sprite1()
+{
+	txt_hover_sprite1.SetActive(true);	
+}
+
+public void offhover_sprite1()
+{
+	txt_hover_sprite1.SetActive(false);	
+}
+
+public void onhover_sprite2()
+{
+	txt_hover_sprite2.SetActive(true);	
+}
+
+public void offhover_sprite2()
+{
+	txt_hover_sprite2.SetActive(false);	
+}		
+
+public void onhover_sprite3()
+{
+	txt_hover_sprite3.SetActive(true);	
+}
+
+public void offhover_sprite3()
+{
+	txt_hover_sprite3.SetActive(false);	
+}	
+
+public void onhover_sprite4()
+{
+	txt_hover_sprite4.SetActive(true);	
+}
+
+public void offhover_sprite4()
+{
+	txt_hover_sprite4.SetActive(false);	
+}	
+
+public void onhover_sprite5()
+{
+	txt_hover_sprite5.SetActive(true);	
+}
+
+public void offhover_sprite5()
+{
+	txt_hover_sprite5.SetActive(false);	
+}
+
+public void onhover_sprite6()
+{
+	txt_hover_sprite6.SetActive(true);	
+}
+
+public void offhover_sprite6()
+{
+	txt_hover_sprite6.SetActive(false);	
+}
+
+public void onhover_sprite7()
+{
+	txt_hover_sprite7.SetActive(true);	
+}
+
+public void offhover_sprite7()
+{
+	txt_hover_sprite7.SetActive(false);	
+}
+
+public void onhover_note1()
+{
+	txt_hover_note1.SetActive(true);	
+}
+
+public void offhover_note1()
+{
+	txt_hover_note1.SetActive(false);	
+}
+
+
+public void onhover_note2()
+{
+	txt_hover_note2.SetActive(true);	
+}
+
+public void offhover_note2()
+{
+	txt_hover_note2.SetActive(false);	
+}
+
+
+public void onhover_note3()
+{
+	txt_hover_note3.SetActive(true);	
+}
+
+public void offhover_note3()
+{
+	txt_hover_note3.SetActive(false);	
+}
+
+
+public void onhover_note4()
+{
+	txt_hover_note4.SetActive(true);	
+}
+
+public void offhover_note4()
+{
+	txt_hover_note4.SetActive(false);	
+}
+
+
+public void onhover_bg1()
+{
+	txt_hover_bg1.SetActive(true);	
+}
+
+public void offhover_bg1()
+{
+	txt_hover_bg1.SetActive(false);	
+}
+
+public void onhover_bg2()
+{
+	txt_hover_bg2.SetActive(true);	
+}
+
+public void offhover_bg2()
+{
+	txt_hover_bg2.SetActive(false);	
+}	
+
+public void onhover_bg3()
+{
+	txt_hover_bg3.SetActive(true);	
+}
+
+public void offhover_bg3()
+{
+	txt_hover_bg3.SetActive(false);	
+}	
+
+public void onhover_bg4()
+{
+	txt_hover_bg4.SetActive(true);	
+}
+
+public void offhover_bg4()
+{
+	txt_hover_bg4.SetActive(false);	
+}				
 
 void decidePricesNames()
 {
@@ -662,6 +897,7 @@ void decidePricesNames()
     void Start()
     {
     	decidePricesNames();
+    	txt_selected.SetActive(false);
     	folderPath = Path.Combine(Application.persistentDataPath, user_selection.folderName);
     	bt_purchase.gameObject.SetActive(false);
     	bt_select.gameObject.SetActive(true);
@@ -710,6 +946,13 @@ void decidePricesNames()
     	bt_purchase.onClick.AddListener(purchase_object);
     	bt_select.onClick.AddListener(select_object);
     	
+
+    	txt_hover_sprites.SetActive(false);
+    	txt_hover_notes.SetActive(false);
+    	txt_hover_bg.SetActive(false);
+
+    	txt_hover_sprite1.SetActive(false);
+
     	
     }
 

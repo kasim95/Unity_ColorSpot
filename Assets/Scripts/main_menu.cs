@@ -12,6 +12,8 @@ public class main_menu : MonoBehaviour
     public Button bt_exit;
     public Button bt_userselect;
 
+    public GameObject txt_hover_user;
+
     void fn_start()
     {
     	SceneManager.LoadScene("Level_Select");
@@ -37,10 +39,21 @@ public class main_menu : MonoBehaviour
         SceneManager.LoadScene("Load User");
     }
 
+    public void onhover_user()
+    {
+        txt_hover_user.SetActive(true);
+    }
+
+    public void offhover_user()
+    {
+        txt_hover_user.SetActive(false);
+    
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        txt_hover_user.SetActive(false);
         bt_start.onClick.AddListener(fn_start);
         bt_store.onClick.AddListener(fn_store);
         bt_settings.onClick.AddListener(fn_settings);

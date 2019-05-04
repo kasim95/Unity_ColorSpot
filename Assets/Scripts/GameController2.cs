@@ -47,6 +47,7 @@ public class GameController2 : MonoBehaviour
 
     void Start()
     {
+        bonus.SetActive(false);
         bt_home.onClick.AddListener(navigate_toHome);
         highscore2 = PlayerPrefs.GetInt("current_lvl2highscore");
         nodechoice = PlayerPrefs.GetInt("current_selected_note");

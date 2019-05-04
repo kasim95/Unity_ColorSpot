@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -59,8 +60,19 @@ public class SelectMenu : MonoBehaviour
     public GameObject Magenta_sign;
     public GameObject Teal_sign;
 
+    public Button bt_quit;
+    public GameObject txt_hover_quit;
+    public GameObject txt_hover_home;
+    public GameObject txt_hover_nextlevel;
+    public GameObject txt_hover_previouslevel;
+
     void Start()
     {
+        txt_hover_quit.SetActive(false);
+        txt_hover_home.SetActive(false);
+        txt_hover_nextlevel.SetActive(false);
+        txt_hover_previouslevel.SetActive(false);
+    	bt_quit.onClick.AddListener(quit_game);
         bt_home.onClick.AddListener(takememain);
     	Level1.SetActive(true);
         Level2.SetActive(false);
@@ -94,6 +106,51 @@ public class SelectMenu : MonoBehaviour
 
 }
 
+	public void quit_game()
+	{
+		Application.Quit();
+	}
+
+    public void bt_quit_onhover()
+    {
+        txt_hover_quit.SetActive(true);
+    }
+
+    public void bt_quit_offhover()
+    {
+        txt_hover_quit.SetActive(false);
+    }
+
+    public void bt_home_onhover()
+    {
+        txt_hover_home.SetActive(true);
+    }
+
+    public void bt_home_offhover()
+    {
+        txt_hover_home.SetActive(false);
+    }
+
+    public void bt_nextlevel_onhover()
+    {
+        txt_hover_nextlevel.SetActive(true);
+    }
+
+    public void bt_nextlevel_offhover()
+    {
+        txt_hover_nextlevel.SetActive(false);
+    }
+
+    public void bt_previouslevel_onhover()
+    {
+        txt_hover_previouslevel.SetActive(true);
+    }
+
+    public void bt_previouslevel_offhover()
+    {
+        txt_hover_previouslevel.SetActive(false);
+    }
+
     public void firstright()
     {
         Level1.SetActive(false);
@@ -115,6 +172,7 @@ public class SelectMenu : MonoBehaviour
         Teal_button.SetActive(false);
         Amber_button.SetActive(false);
         Magenta_button.SetActive(false);
+        txt_hover_nextlevel.SetActive(false);
     }
 
     public void secondleft()
@@ -137,6 +195,7 @@ public class SelectMenu : MonoBehaviour
         Teal_button.SetActive(false);
         Amber_button.SetActive(false);
         Magenta_button.SetActive(false);
+        txt_hover_previouslevel.SetActive(false);
     }
 
     public void secondright()
@@ -160,6 +219,7 @@ public class SelectMenu : MonoBehaviour
         Teal_button.SetActive(true);
         Amber_button.SetActive(true);
         Magenta_button.SetActive(true);
+        txt_hover_nextlevel.SetActive(false);
     }
 
     public void thirdleft()
@@ -182,6 +242,7 @@ public class SelectMenu : MonoBehaviour
         Teal_button.SetActive(false);
         Amber_button.SetActive(false);
         Magenta_button.SetActive(false);
+        txt_hover_previouslevel.SetActive(false);
     }
     public void takemetoLV1()
     {
@@ -204,6 +265,22 @@ public class SelectMenu : MonoBehaviour
         //scenemanager to main
     }
 
+
+    public void show_off()
+    {
+        Red_sign.SetActive(false);
+        Blue_sign.SetActive(false);
+        Yellow_sign.SetActive(false);
+        Orange_sign.SetActive(false);
+        Green_sign.SetActive(false);
+        Purple_sign.SetActive(false);
+        Amber_sign.SetActive(false);
+        Magenta_sign.SetActive(false);
+        Teal_sign.SetActive(false);
+    }
+
+
+
     public void show_red()
     {
         Red_sign.SetActive(true);
@@ -216,6 +293,8 @@ public class SelectMenu : MonoBehaviour
         Magenta_sign.SetActive(false);
         Teal_sign.SetActive(false);
     }
+
+    
 
     public void show_blue()
     {
