@@ -120,12 +120,15 @@ public class user_selection : MonoBehaviour
 	public Button bt_username1;
 	public Button bt_username2;
 	public Button bt_username3;
+	public Button bt_username4;
 	public Button bt_delusername1;
 	public Button bt_delusername2;
 	public Button bt_delusername3;
+	public Button bt_delusername4;
 	public Text txt_username1;
 	public Text txt_username2;
 	public Text txt_username3;
+	public Text txt_username4;
 	public GameObject panel_user_input;
 	public InputField if_username;
 	public Button bt_userinput;
@@ -151,6 +154,7 @@ public class user_selection : MonoBehaviour
 	public User user1;
 	public User user2;
 	public User user3;
+	public User user4;
 
 	
 	public static string GetPath(int user_no, string folderPath)
@@ -162,8 +166,8 @@ public class user_selection : MonoBehaviour
 
 	void defineUserData()
 	{
-		User[] user_list = new User[4];
-		for (int i = 1; i <= 3; ++i)
+		User[] user_list = new User[5];
+		for (int i = 1; i <= 4; ++i)
         {
         	string dataPath = GetPath(i, folderPath);
         	name = "username" + i.ToString();
@@ -274,7 +278,7 @@ public class user_selection : MonoBehaviour
 			selectednote = user2.selectednote;
 			selectedbg = user2.selectedbg;
 		}
-		else
+		else if (no == 3)
 		{
 			uname = user3.uname;
 			lvl1highscore = user3.lvl1highscore;
@@ -284,6 +288,17 @@ public class user_selection : MonoBehaviour
 			selectedsprite = user3.selectedsprite;
 			selectednote = user3.selectednote;
 			selectedbg = user3.selectedbg;
+		}
+		else
+		{
+			uname = user4.uname;
+			lvl1highscore = user4.lvl1highscore;
+			lvl2highscore = user4.lvl2highscore;
+			lvl3highscore = user4.lvl3highscore;
+			coincount = user4.coincount;
+			selectedsprite = user4.selectedsprite;
+			selectednote = user4.selectednote;
+			selectedbg = user4.selectedbg;
 		}
 	}
 
@@ -322,6 +337,16 @@ public class user_selection : MonoBehaviour
 		}
 		load_uname3_cont();
 		StopCoroutine(WaitforUserInput3());
+	}
+
+	IEnumerator WaitforUserInput4()
+	{
+		while (isbtpressed == false)
+		{
+			yield return new WaitForSeconds(1f);
+		}
+		load_uname4_cont();
+		StopCoroutine(WaitforUserInput4());
 	}
 
 
@@ -478,6 +503,54 @@ public class user_selection : MonoBehaviour
 			}
 	}
 
+	void load_uname4_cont()
+	{
+		string name_userinput = if_username.text;
+		panel_user_input.SetActive(false);
+		
+		user4 = Load_Binary(GetPath(4, folderPath));
+		user4.uname = name_userinput;
+		//change this later tp input for name
+		user4.userexists = true;
+		Save_Binary(user4, 4, folderPath);
+		txt_username4.text = user4.uname;
+		bt_delusername4.gameObject.SetActive(true);
+		isbtpressed = false;
+		uname = user4.uname;
+		lvl1highscore = user4.lvl1highscore;
+		lvl2highscore = user4.lvl2highscore;
+		lvl3highscore = user4.lvl3highscore;
+		coincount = user4.coincount;
+		selectednote = user4.selectednote;
+		selectedsprite = user4.selectedsprite;
+		selectedbg = user4.selectedbg;
+		Save_PlayerPrefs(4);
+		//add code to deactivate the panel
+		//change this later to navigate to Home
+	}
+
+
+
+	void load_uname4()
+	{
+		isbtpressed = false;
+		if (user4.userexists == true)
+		{
+			makecurrentuser(4);
+			Save_PlayerPrefs(4);
+			//add code to deactivate this panel
+			//panel_user_selection.SetActive(false);
+			SceneManager.LoadScene("Menu2");
+		}
+		else
+		{
+			if_username.text = "";
+			panel_user_input.SetActive(true);
+			StartCoroutine(WaitforUserInput4());
+		
+			}
+	}
+
 	void del_uname1()
 	{
 		if (user1.userexists == true)
@@ -489,9 +562,9 @@ public class user_selection : MonoBehaviour
 			user1.lvl2highscore = 0;
 			user1.lvl3highscore = 0;
 			user1.coincount = 1500;
-			user1.selectedsprite = 0;
-			user1.selectednote = 0;
-			user1.selectedbg = 0;
+			user1.selectedsprite = 1;
+			user1.selectednote = 1;
+			user1.selectedbg = 1;
 			user1.spritespurchased[1] = true;	
 			user1.notespurchased[1] = true;	
 			user1.bgpurchased[1] = true;
@@ -525,9 +598,9 @@ public class user_selection : MonoBehaviour
 			user2.lvl2highscore = 0;
 			user2.lvl3highscore = 0;
 			user2.coincount = 1500;
-			user2.selectedsprite = 0;
-			user2.selectednote = 0;
-			user2.selectedbg = 0;
+			user2.selectedsprite = 1;
+			user2.selectednote = 1;
+			user2.selectedbg = 1;
 			user2.spritespurchased[1] = true;	
 			user2.notespurchased[1] = true;	
 			user2.bgpurchased[1] = true;
@@ -562,9 +635,9 @@ public class user_selection : MonoBehaviour
 			user3.lvl2highscore = 0;
 			user3.lvl3highscore = 0;
 			user3.coincount = 1500;
-			user3.selectedsprite = 0;
-			user3.selectednote = 0;
-			user3.selectedbg = 0;
+			user3.selectedsprite = 1;
+			user3.selectednote = 1;
+			user3.selectedbg = 1;
 			user3.spritespurchased[1] = true;	
 			user3.notespurchased[1] = true;	
 			user3.bgpurchased[1] = true;
@@ -589,6 +662,44 @@ public class user_selection : MonoBehaviour
 	
 	}
 
+	void del_uname4()
+	{
+		if (user4.userexists == true)
+		{
+			user4.userexists = false;
+			user4.uname = "username4";
+			user4.coincount = 1500;
+			user4.lvl1highscore = 0;
+			user4.lvl2highscore = 0;
+			user4.lvl3highscore = 0;
+			user4.coincount = 1500;
+			user4.selectedsprite = 1;
+			user4.selectednote = 1;
+			user4.selectedbg = 1;
+			user4.spritespurchased[1] = true;	
+			user4.notespurchased[1] = true;	
+			user4.bgpurchased[1] = true;
+			user4.userexists = false;	
+			for(int j = 2; j <= 7; ++j)
+			{
+				user4.spritespurchased[j] = false;	
+			}
+			for (int j = 2; j <= 4; ++j)
+			{
+				user4.notespurchased[j] = false;		
+			}
+			for (int j = 2; j <= 4; ++j)
+			{
+				user4.bgpurchased[j] = false;
+			}
+			
+			Save_Binary(user4,4, folderPath);
+			txt_username4.text = "<None>";
+			bt_delusername4.gameObject.SetActive(false);
+		}
+	
+	}
+
     // Start is called before the first frame update
     void Start()
     {
@@ -607,12 +718,15 @@ public class user_selection : MonoBehaviour
 		user1 = Load_Binary(GetPath(1, folderPath));
 		user2 = Load_Binary(GetPath(2, folderPath));
 		user3 = Load_Binary(GetPath(3, folderPath));
+		user4 = Load_Binary(GetPath(4, folderPath));
         bt_username1.onClick.AddListener(load_uname1);
 		bt_username2.onClick.AddListener(load_uname2);
 		bt_username3.onClick.AddListener(load_uname3);
+		bt_username4.onClick.AddListener(load_uname4);
 		bt_delusername1.onClick.AddListener(del_uname1);
 		bt_delusername2.onClick.AddListener(del_uname2);
 		bt_delusername3.onClick.AddListener(del_uname3);
+		bt_delusername4.onClick.AddListener(del_uname4);
 		panel_user_input.SetActive(false);
 		bt_userinput.onClick.AddListener(userinputgiven);
 		
@@ -645,8 +759,18 @@ public class user_selection : MonoBehaviour
 		}
 		else
 		{
-			txt_username3.text = user2.uname;
+			txt_username3.text = user3.uname;
 			bt_delusername3.gameObject.SetActive(true);
+		}
+		if (user4.userexists == false)
+		{
+			txt_username4.text = "<None>";
+			bt_delusername4.gameObject.SetActive(false);
+		}
+		else
+		{
+			txt_username4.text = user4.uname;
+			bt_delusername4.gameObject.SetActive(true);
 		}
     }
 
