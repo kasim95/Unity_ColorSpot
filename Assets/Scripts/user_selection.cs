@@ -133,6 +133,7 @@ public class user_selection : MonoBehaviour
 	public InputField if_username;
 	public Button bt_userinput;
 	public bool isbtpressed;
+	public Button bt_quit;
 
 	public static string folderName = "User_Data";
 	public static string folderPath;
@@ -700,6 +701,11 @@ public class user_selection : MonoBehaviour
 	
 	}
 
+	void quitgame()
+	{
+		Application.Quit();
+	}
+
     // Start is called before the first frame update
     void Start()
     {
@@ -772,6 +778,7 @@ public class user_selection : MonoBehaviour
 			txt_username4.text = user4.uname;
 			bt_delusername4.gameObject.SetActive(true);
 		}
+		bt_quit.onClick.AddListener(quitgame);
     }
 
     void Awake()

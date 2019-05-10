@@ -868,7 +868,7 @@ void decidePricesNames()
 	sprites_names[6] = "Sad Girl";
 	sprites_prices[6] = 50;
 	sprites_names[7] = "Sword Guy";
-	sprites_prices[7] = 50;
+	sprites_prices[7] = 5000;
 
 	notes_names[1] = "Balls";
 	notes_prices[1] = 0;
