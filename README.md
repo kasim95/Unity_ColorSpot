@@ -1,6 +1,6 @@
 # Unity_ColorSpot
 
-<img alt="C#" src="https://img.shields.io/badge/-C%23-239120?style=plastic&logo=c-sharp&logoColor=white" /> <img alt="Unity" src="https://img.shields.io/badge/-Unity-000000?style=plastic&logo=unity&logoColor=white" /> <img alt="Adobe Illustrator" src="https://img.shields.io/badge/-Illustrator-239120?style=plastic&logo=adobe-illustrator&logoColor=white" /> 
+<img alt="C#" src="https://img.shields.io/badge/-C%23-239120?style=plastic&logo=c-sharp&logoColor=white" /> <img alt="Unity" src="https://img.shields.io/badge/-Unity-000000?style=plastic&logo=unity&logoColor=white" /> <img alt="Adobe Illustrator" src="https://img.shields.io/badge/-Illustrator-ff9a00?style=plastic&logo=adobe-illustrator&logoColor=white" /> 
 
 An educational catch and fall game made with Unity Engine and C#
 
