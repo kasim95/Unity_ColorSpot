@@ -21,9 +21,6 @@ Vince | _vincentcnt95@gmail.com_
 
 ### Demo:
 
-<img alt="ColorSpot Menu" height="200" width="80" src="https://raw.githubusercontent.com/kasim95/Unity_ColorSpot/master/Demo/colorspot-1.jpg" />
-<img alt="ColorSpot Shop" height="200" width="80" src="https://raw.githubusercontent.com/kasim95/Unity_ColorSpot/master/Demo/colorspot-2.jpg" />
-<img alt="ColorSpot Gameplay" height="200" width="80" src="https://raw.githubusercontent.com/kasim95/Unity_ColorSpot/master/Demo/colorspot-3.jpg" />
+<img alt="ColorSpot Menu" height="300" width="200" src="https://raw.githubusercontent.com/kasim95/Unity_ColorSpot/master/Demo/colorspot-1.jpg" /> <img alt="ColorSpot Shop" height="300" width="200" src="https://raw.githubusercontent.com/kasim95/Unity_ColorSpot/master/Demo/colorspot-2.jpg" /> <img alt="ColorSpot Gameplay" height="300" width="200" src="https://raw.githubusercontent.com/kasim95/Unity_ColorSpot/master/Demo/colorspot-3.jpg" />
 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CNAdpm5gDwc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Click [here](https://youtu.be/CNAdpm5gDwc) to watch a video of the gameplay
